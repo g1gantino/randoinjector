@@ -58,11 +58,6 @@ using namespace std;
 // Don't change this!
 #define _JUNK_BLOCK(s) __asm jmp s JUNKS __asm s:
 
-
-/////////////////////////////////////////////////////////////////////////////////////
-//                                 NIGGERS STFU                                    //
-/////////////////////////////////////////////////////////////////////////////////////
-
 DWORD GetPid(char* ProcessName)
 {
 	HANDLE hPID = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, NULL);
@@ -121,6 +116,7 @@ DWORD Process(char* ProcessName)
 
 int main()
 {
+	// poorly written was 2 lazy
 	system("title DiamondWare Injector");
 	system("color b");
 	system("@echo off");
@@ -144,6 +140,7 @@ int main()
 	cout << "pls wait";
 	LPCSTR DLL_NAME = dll_name_blyat.c_str();
 	Sleep(1000);
+	// remove the sleep line if ur too lazy to wait 1second for the injector not doing anything.
 	// ....................I         N               J        E             C           T ..........................
 	_JUNK_BLOCK(jmp_label11)
 		DWORD dwProcess;
