@@ -124,14 +124,12 @@ int main()
 	system("title DiamondWare Injector");
 	system("color b");
 	system("@echo off");
-	cout << "Doing some stuff...";
-	Sleep(2000);
 	system("cls");
 	// ....................
 	string dll_name_blyat;
 	string find_dll;
 	//....................
-	cout << "What is the DLL name?";
+	cout << "What is the DLL name? Include .dll:";
 	cin >> dll_name_blyat;
 	//.................
 	//check dll
@@ -145,6 +143,7 @@ int main()
 	cout << dll_name_blyat;
 	cout << "pls wait";
 	LPCSTR DLL_NAME = dll_name_blyat.c_str();
+	Sleep(1000);
 	// ....................I         N               J        E             C           T ..........................
 	_JUNK_BLOCK(jmp_label11)
 		DWORD dwProcess;
