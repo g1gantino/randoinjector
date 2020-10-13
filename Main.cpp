@@ -117,7 +117,7 @@ DWORD Process(char* ProcessName)
 int main()
 {
 	// poorly written was 2 lazy
-	system("title DiamondWare Injector");
+	system("title Injector");
 	system("color b");
 	system("@echo off");
 	system("cls");
