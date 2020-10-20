@@ -7,52 +7,81 @@
 #include <thread>
 #include <cstdlib>
 #include "Set.h"
+#include <ctime>
+
+
 
 // And you need:
 // 1. change all bytes(0x00, 0x01, 0x03....) in define "JUNKS" to random bytes
 // 2. change size this block by adding new bytes
 #define JUNKS \
-__asm _emit 0xAC \
-__asm _emit 0x67 \
-__asm _emit 0x7F \
-__asm _emit 0xF8 \
-__asm _emit 0x54 \
-__asm _emit 0x24 \
-__asm _emit 0xAA \
-__asm _emit 0x43 \
-__asm _emit 0xE6 \
-__asm _emit 0x46 \
-__asm _emit 0x29 \
-__asm _emit 0x38 \
-__asm _emit 0x1F \
-__asm _emit 0x75 \
+__asm _emit 0x86 \
+__asm _emit 0xD2 \
+__asm _emit 0x40 \
+__asm _emit 0x34 \
 __asm _emit 0x59 \
-__asm _emit 0x2F \
+__asm _emit 0x65 \
+__asm _emit 0xA1 \
+__asm _emit 0x3A \
+__asm _emit 0x12 \
+__asm _emit 0xF6 \
+__asm _emit 0x81 \
+__asm _emit 0xC6 \
+__asm _emit 0x22 \
+__asm _emit 0x9C \
+__asm _emit 0xC1 \
+__asm _emit 0x8F \
+__asm _emit 0x0E \
+__asm _emit 0x51 \
+__asm _emit 0xA8 \
+__asm _emit 0x30 \
+__asm _emit 0x9D \
+__asm _emit 0x81 \
+__asm _emit 0x80 \
+__asm _emit 0xCA \
 __asm _emit 0xED \
 __asm _emit 0xEE \
-__asm _emit 0xFB \
-__asm _emit 0xC8 \
-__asm _emit 0x94 \
-__asm _emit 0xE3 \
-__asm _emit 0xC7 \
-__asm _emit 0x16 \
+__asm _emit 0x2A \
+__asm _emit 0x8F \
+__asm _emit 0x3E \
+__asm _emit 0x4F \
+__asm _emit 0x86 \
+__asm _emit 0xF7 \
+__asm _emit 0x35 \
+__asm _emit 0xDC \
 __asm _emit 0xBC \
-__asm _emit 0xF6 \
-__asm _emit 0xF4 \
-__asm _emit 0x30 \
-__asm _emit 0xF0 \
-__asm _emit 0xE1 \
-__asm _emit 0xF1 \
-__asm _emit 0xAE \
-__asm _emit 0x60 \
-__asm _emit 0xE2 \
-__asm _emit 0x40 \
-__asm _emit 0x12 \
-__asm _emit 0x41 \
-__asm _emit 0x27 \
-__asm _emit 0xE6 \
-__asm _emit 0x7C \
+__asm _emit 0xDE \
+__asm _emit 0xAA \
+__asm _emit 0xE3 \
+__asm _emit 0x46 \
+__asm _emit 0x24 \
+__asm _emit 0x9B \
+__asm _emit 0x26 \
+__asm _emit 0xD3 \
+__asm _emit 0x3C \
+__asm _emit 0x67 \
+__asm _emit 0x7B \
+__asm _emit 0x56 \
+__asm _emit 0x7E \
+__asm _emit 0x94 \
+__asm _emit 0xFB \
 
+// you can move theese into a header file and include the header file, but for the majority i left it here....
+string dll_name;
+string find_dll;
+string title;
+string color;
+string echo_off;
+string cls;
+int x;
+int y;
+int z;
+int _x;
+int _y;
+int _z;
+int yeet;
+int yah;
+int yeah_motherfucking_yeet;
 
 
 using namespace std;
@@ -82,12 +111,7 @@ DWORD GetPid(char* ProcessName)
 	} while (Process32Next(hPID, &ProcEntry));
 }
 
-void Define_SystemStuff() {
-	title = system("title Injector made by giga");
-	color = system("color b");
-	echo_off = system("@echo off");
-	cls = system("cls");
-}
+
 
 DWORD Process(char* ProcessName)
 {
@@ -124,9 +148,9 @@ DWORD Process(char* ProcessName)
 
 int main()
 {
-	echo_off;
-	title;
-	color;
+	system("@echo off");
+	system("title Injector made by giga");
+	system("color b");
 	//....................
 	cout << "DLL:" << endl;
 	cin >> dll_name;
@@ -136,8 +160,9 @@ int main()
 		dll_name += ".dll";
 	}
 	// junkcode
-	cls;
+	system("cls");
 	cout << "Random Numbers / ignore" << endl;
+	srand(time(NULL));
 	x = rand() % 10000;
 	y = rand() % 10000;
 	z = rand() % 10000;
