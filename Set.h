@@ -1,11 +1,4 @@
-#include <Windows.h>
-#include <TlHelp32.h>
-#include "JunkCode.h"
-#include "iostream"
-#include <string>
-#include <chrono>
-#include <thread>
-#include <cstdlib>
+
 
 using namespace std;
 
