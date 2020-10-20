@@ -6,8 +6,11 @@
 #include <chrono>
 #include <thread>
 #include <cstdlib>
+#include "Set.h"
 
-
+// And you need:
+// 1. change all bytes(0x00, 0x01, 0x03....) in define "JUNKS" to random bytes
+// 2. change size this block by adding new bytes
 #define JUNKS \
 __asm _emit 0xAC \
 __asm _emit 0x67 \
@@ -55,7 +58,7 @@ __asm _emit 0x7C \
 using namespace std;
 
 
-
+// Don't change this!
 #define _JUNK_BLOCK(s) __asm jmp s JUNKS __asm s:
 
 DWORD GetPid(char* ProcessName)
@@ -79,6 +82,12 @@ DWORD GetPid(char* ProcessName)
 	} while (Process32Next(hPID, &ProcEntry));
 }
 
+void Define_SystemStuff() {
+	title = system("title Injector made by giga");
+	color = system("color b");
+	echo_off = system("@echo off");
+	cls = system("cls");
+}
 
 DWORD Process(char* ProcessName)
 {
@@ -115,31 +124,19 @@ DWORD Process(char* ProcessName)
 
 int main()
 {
-	string dll_name;
-	string find_dll;
-	int x;
-	int y;
-	int z;
-	int _x;
-	int _y;
-	int _z;
-	// poorly written was 2 lazy
-	system("title Injector made by giga");
-	system("color b");
-	system("@echo off");
-	system("cls");
+	echo_off;
+	title;
+	color;
 	//....................
 	cout << "DLL:" << endl;
 	cin >> dll_name;
 	//.................
-	//check dll
 	if (!(dll_name.find(find_dll) != std::string::npos))
 	{
 		dll_name += ".dll";
 	}
-	//........................
 	// junkcode
-	system("cls");
+	cls;
 	cout << "Random Numbers / ignore" << endl;
 	x = rand() % 10000;
 	y = rand() % 10000;
@@ -202,9 +199,6 @@ int main()
 }
 
 void retarded_big_coder_moments() {
-	int yeet;
-	int yah;
-	int yeah_motherfucking_yeet;
 	yeet = 10;
 		yah = 20;
 		yeah_motherfucking_yeet = yeet + yah;
