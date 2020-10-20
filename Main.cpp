@@ -5,57 +5,57 @@
 #include <string>
 #include <chrono>
 #include <thread>
+#include <cstdlib>
 
-// And you need:
-// 1. change all bytes(0x00, 0x01, 0x03....) in define "JUNKS" to random bytes
-// 2. change size this block by adding new bytes
+
 #define JUNKS \
-__asm _emit 0x67 \
-__asm _emit 0x87 \
-__asm _emit 0x60 \
-__asm _emit 0x07 \
-__asm _emit 0xD6 \
-__asm _emit 0xD1 \
-__asm _emit 0xB7 \
-__asm _emit 0x98 \
-__asm _emit 0x9B \
-__asm _emit 0x55 \
-__asm _emit 0x7E \
-__asm _emit 0x1F \
-__asm _emit 0x52 \
-__asm _emit 0xA9 \
-__asm _emit 0x6F \
-__asm _emit 0x3C \
-__asm _emit 0x2D \
-__asm _emit 0x77 \
-__asm _emit 0xB4 \
-__asm _emit 0xE5 \
-__asm _emit 0x21 \
-__asm _emit 0xEE \
-__asm _emit 0xBB \
-__asm _emit 0x30 \
-__asm _emit 0xE7 \
-__asm _emit 0x2F \
-__asm _emit 0xF9 \
-__asm _emit 0xAA \
-__asm _emit 0x0C \
-__asm _emit 0xD0 \
-__asm _emit 0x64 \
-__asm _emit 0xE3 \
-__asm _emit 0x91 \
 __asm _emit 0xAC \
-__asm _emit 0x07 \
-__asm _emit 0xC0 \
-__asm _emit 0xDC \
-__asm _emit 0xC1 \
-__asm _emit 0x42 \
-__asm _emit 0x88 \
+__asm _emit 0x67 \
+__asm _emit 0x7F \
+__asm _emit 0xF8 \
+__asm _emit 0x54 \
+__asm _emit 0x24 \
+__asm _emit 0xAA \
+__asm _emit 0x43 \
+__asm _emit 0xE6 \
+__asm _emit 0x46 \
+__asm _emit 0x29 \
+__asm _emit 0x38 \
+__asm _emit 0x1F \
+__asm _emit 0x75 \
+__asm _emit 0x59 \
+__asm _emit 0x2F \
+__asm _emit 0xED \
+__asm _emit 0xEE \
+__asm _emit 0xFB \
+__asm _emit 0xC8 \
+__asm _emit 0x94 \
+__asm _emit 0xE3 \
+__asm _emit 0xC7 \
+__asm _emit 0x16 \
+__asm _emit 0xBC \
+__asm _emit 0xF6 \
+__asm _emit 0xF4 \
+__asm _emit 0x30 \
+__asm _emit 0xF0 \
+__asm _emit 0xE1 \
+__asm _emit 0xF1 \
+__asm _emit 0xAE \
+__asm _emit 0x60 \
+__asm _emit 0xE2 \
+__asm _emit 0x40 \
+__asm _emit 0x12 \
+__asm _emit 0x41 \
+__asm _emit 0x27 \
+__asm _emit 0xE6 \
+__asm _emit 0x7C \
+
 
 
 using namespace std;
 
 
-// Don't change this!
+
 #define _JUNK_BLOCK(s) __asm jmp s JUNKS __asm s:
 
 DWORD GetPid(char* ProcessName)
@@ -81,64 +81,83 @@ DWORD GetPid(char* ProcessName)
 
 
 DWORD Process(char* ProcessName)
-{			
+{
 	_JUNK_BLOCK(jmp_label1)
-	HANDLE hPID = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, NULL);
-	
+		HANDLE hPID = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, NULL);
+
 	_JUNK_BLOCK(jmp_label2)
-	PROCESSENTRY32 ProcEntry;
-	
+		PROCESSENTRY32 ProcEntry;
+
 	_JUNK_BLOCK(jmp_label3)
-	ProcEntry.dwSize = sizeof(ProcEntry);
-	
+		ProcEntry.dwSize = sizeof(ProcEntry);
+
 	_JUNK_BLOCK(jmp_label4)
-	do
-	{
-		_JUNK_BLOCK(jmp_label5)
-		if (!strcmp(ProcEntry.szExeFile, ProcessName))
+		do
 		{
-			_JUNK_BLOCK(jmp_label6)
-			DWORD dwPID = ProcEntry.th32ProcessID;
-			
-			_JUNK_BLOCK(jmp_label7)
-			CloseHandle(hPID);
-			
-			_JUNK_BLOCK(jmp_label8)
-			return dwPID;
-		}
-		
-		_JUNK_BLOCK(jmp_label9)
-	}
-	while (Process32Next(hPID, &ProcEntry));
-	
-	_JUNK_BLOCK(jmp_label10)
+			_JUNK_BLOCK(jmp_label5)
+				if (!strcmp(ProcEntry.szExeFile, ProcessName))
+				{
+					_JUNK_BLOCK(jmp_label6)
+						DWORD dwPID = ProcEntry.th32ProcessID;
+
+					_JUNK_BLOCK(jmp_label7)
+						CloseHandle(hPID);
+
+					_JUNK_BLOCK(jmp_label8)
+						return dwPID;
+				}
+
+			_JUNK_BLOCK(jmp_label9)
+		} while (Process32Next(hPID, &ProcEntry));
+
+			_JUNK_BLOCK(jmp_label10)
 }
 
 int main()
 {
+	string dll_name;
+	string find_dll;
+	int x;
+	int y;
+	int z;
+	int _x;
+	int _y;
+	int _z;
 	// poorly written was 2 lazy
-	system("title Injector");
+	system("title Injector made by giga");
 	system("color b");
 	system("@echo off");
 	system("cls");
-	// ....................
-	string dll_name_blyat;
-	string find_dll;
 	//....................
-	cout << "What is the DLL name? Include .dll:";
-	cin >> dll_name_blyat;
+	cout << "DLL:" << endl;
+	cin >> dll_name;
 	//.................
 	//check dll
-	if (!(dll_name_blyat.find(find_dll) != std::string::npos))				
+	if (!(dll_name.find(find_dll) != std::string::npos))
 	{
-		dll_name_blyat += ".dll";											
+		dll_name += ".dll";
 	}
 	//........................
-	
-	cout << "Injecting :-)";
-	cout << dll_name_blyat;
-	cout << "pls wait";
-	LPCSTR DLL_NAME = dll_name_blyat.c_str();
+	// junkcode
+	system("cls");
+	cout << "Random Numbers / ignore" << endl;
+	x = rand() % 10000;
+	y = rand() % 10000;
+	z = rand() % 10000;
+	_x = x * y;
+	_y = y * z;
+	_z = z * y;
+	//
+	cout << x << endl;
+	cout << y << endl;
+	cout << z << endl;
+	//
+	cout << _x << endl;
+	cout << _y << endl;
+	cout << _z << endl;
+	Sleep(420);
+	cout << "Done...";
+	LPCSTR DLL_NAME = dll_name.c_str();
 	Sleep(1000);
 	// remove the sleep line if ur too lazy to wait 1second for the injector not doing anything.
 	// ....................I         N               J        E             C           T ..........................
@@ -181,3 +200,15 @@ int main()
 
 	_JUNK_BLOCK(jmp_label21)
 }
+
+void retarded_big_coder_moments() {
+	int yeet;
+	int yah;
+	int yeah_motherfucking_yeet;
+	yeet = 10;
+		yah = 20;
+		yeah_motherfucking_yeet = yeet + yah;
+
+}
+
+
