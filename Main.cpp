@@ -66,22 +66,7 @@ __asm _emit 0x7E \
 __asm _emit 0x94 \
 __asm _emit 0xFB \
 
-// you can move theese into a header file and include the header file, but for the majority i left it here....
-string dll_name;
-string find_dll;
-string title;
-string color;
-string echo_off;
-string cls;
-int x;
-int y;
-int z;
-int _x;
-int _y;
-int _z;
-int yeet;
-int yah;
-int yeah_motherfucking_yeet;
+
 
 
 using namespace std;
@@ -149,10 +134,22 @@ DWORD Process(char* ProcessName)
 int main()
 {
 	system("@echo off");
-	system("title Injector made by giga");
+	system("title Future Injector");
 	system("color b");
+	cout << " ______     _                    _____       _           _             " << endl;
+	cout << "|  ____|   | |                  |_   _|     (_)         | |            " << endl;
+	cout << "| |__ _   _| |_ _   _ _ __ ___    | |  _ __  _  ___  ___| |_ ___  _ __ " << endl;
+	cout << "|  __| | | | __| | | | '__/ _ |   | | | '_ || |/ _ |/ __| __/ _ || '__|" << endl;
+	cout << "| |  | |_| | |_| |_| | | |  __/  _| |_| | | | |  __/ (__| || (_) | |   " << endl;
+	cout << "|_|   |__,_||__||__,_|_|  |___| |_____|_| |_| ||___||___||__|___/|_|   "<< endl;
+	cout << "                                           |__/                         " << endl;
+	cout << "                                                           Made by giga" << endl;
+	cout << endl;
+	cout << endl;
+	cout << "How to use:" << endl;
+	cout << "Have the injector and DLL in the same folder and simply type the DLL name" << endl;
 	//....................
-	cout << "DLL:" << endl;
+	cout << "DLL NAME:" << endl;
 	cin >> dll_name;
 	//.................
 	if (!(dll_name.find(find_dll) != std::string::npos))
@@ -161,7 +158,7 @@ int main()
 	}
 	// junkcode
 	system("cls");
-	cout << "Random Numbers / ignore" << endl;
+	cout << "Generating Random Numbers.." << endl;
 	srand(time(NULL));
 	x = rand() % 10000;
 	y = rand() % 10000;
