@@ -8,8 +8,11 @@
 #include <cstdlib>
 #include "Set.h"
 #include <ctime>
-
-
+// _________________________READ_________________________
+// THIS WILL NOT COMPILE!!!!
+// YOU NEED TO CREATE A HEADER FILE "Set.h", And copy all the things that are inside of mine Set.h on github. Then you have to do #include "Set.h".
+// IF YOU NEED ANY HELP CREATING THIS PM ME ON DISCORD Gigantino#8737
+// ENJOY!
 
 // And you need:
 // 1. change all bytes(0x00, 0x01, 0x03....) in define "JUNKS" to random bytes
