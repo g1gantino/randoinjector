@@ -8,6 +8,7 @@
 #include <cstdlib>
 #include "Set.h"
 #include <ctime>
+using namespace std;
 // _________________________READ_________________________
 // THIS WILL NOT COMPILE!!!!
 // YOU NEED TO CREATE A HEADER FILE "Set.h", And copy all the things that are inside of mine Set.h on github. Then you have to do #include "Set.h".
