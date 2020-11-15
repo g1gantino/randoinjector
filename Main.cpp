@@ -1,23 +1,47 @@
 #include <Windows.h>
 #include <TlHelp32.h>
-#include "JunkCode.h"
 #include "iostream"
 #include <string>
 #include <chrono>
 #include <thread>
 #include <cstdlib>
-#include "Set.h"
 #include <ctime>
 using namespace std;
-// _________________________READ_________________________
-// THIS WILL NOT COMPILE!!!!
-// YOU NEED TO CREATE A HEADER FILE "Set.h", And copy all the things that are inside of mine Set.h on github. Then you have to do #include "Set.h".
-// IF YOU NEED ANY HELP CREATING THIS PM ME ON DISCORD Gigantino#8737
-// ENJOY!
 
-// And you need:
-// 1. change all bytes(0x00, 0x01, 0x03....) in define "JUNKS" to random bytes
-// 2. change size this block by adding new bytes
+HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+string dll_name;
+string find_dll;
+string title;
+string color;
+string echo_off;
+string cls;
+string holy_thousand;
+int x;
+int y;
+int z;
+int _x;
+int _y;
+int _z;
+int jc1;
+int jc2;
+int jc123;
+// _________________________READ_________________________
+/*
+Injector is made by the creator of randoinjector, then fixed by martinjanas to fix with trustlaunch, then I added some misc stuff here.
+It is nothing special but it works, is UD and is free.
+Feel free to use it in your videos etc.
+==\
+Colors:
+(for you if you want to change colors)
+#define FOREGROUND_BLUE      0x0001 // text color contains blue.
+#define FOREGROUND_GREEN     0x0002 // text color contains green.
+#define FOREGROUND_RED       0x0004 // text color contains red.
+#define FOREGROUND_INTENSITY 0x0008 // text color is intensified.
+#define BACKGROUND_BLUE      0x0010 // background color contains blue.
+#define BACKGROUND_GREEN     0x0020 // background color contains green.
+#define BACKGROUND_RED       0x0040 // background color contains red.
+#define BACKGROUND_INTENSITY 0x0080 // background color is intensified.
+*/
 #define JUNKS \
 __asm _emit 0x86 \
 __asm _emit 0xD2 \
@@ -137,30 +161,29 @@ DWORD Process(char* ProcessName)
 
 int main()
 {
+	//FIXME: dont use system
 	system("@echo off");
 	system("title Future Injector");
-	system("color b");
+	SetConsoleTextAttribute(h,FOREGROUND_BLUE | FOREGROUND_INTENSITY);
 	cout << " ______     _                    _____       _           _             " << endl;
 	cout << "|  ____|   | |                  |_   _|     (_)         | |            " << endl;
 	cout << "| |__ _   _| |_ _   _ _ __ ___    | |  _ __  _  ___  ___| |_ ___  _ __ " << endl;
 	cout << "|  __| | | | __| | | | '__/ _ |   | | | '_ || |/ _ |/ __| __/ _ || '__|" << endl;
 	cout << "| |  | |_| | |_| |_| | | |  __/  _| |_| | | | |  __/ (__| || (_) | |   " << endl;
-	cout << "|_|   |__,_||__||__,_|_|  |___| |_____|_| |_| ||___||___||__|___/|_|   "<< endl;
+	cout << "|_|   |__,_||__||__,_|_|  |___| |_____|_| |_| ||___||___||__|___/|_|   " << endl;
 	cout << "                                           |__/                         " << endl;
-	cout << "                                                           Made by giga" << endl;
 	cout << endl;
 	cout << endl;
-	cout << "How to use:" << endl;
-	cout << "Have the injector and DLL in the same folder and simply type the DLL name" << endl;
 	//....................
+	SetConsoleTextAttribute(h, FOREGROUND_RED | FOREGROUND_INTENSITY);
 	cout << "DLL NAME:" << endl;
 	cin >> dll_name;
-	//.................
+	//....................
 	if (!(dll_name.find(find_dll) != std::string::npos))
 	{
 		dll_name += ".dll";
 	}
-	// junkcode
+	// Generate Random Numbers
 	system("cls");
 	cout << "Generating Random Numbers.." << endl;
 	srand(time(NULL));
@@ -182,7 +205,7 @@ int main()
 	cout << "Done...";
 	LPCSTR DLL_NAME = dll_name.c_str();
 	Sleep(1000);
-	// remove the sleep line if ur too lazy to wait 1second for the injector not doing anything.
+	// Sleep is unneccesary but good for a less snappy experience
 	// ....................I         N               J        E             C           T ..........................
 	_JUNK_BLOCK(jmp_label11)
 		DWORD dwProcess;
@@ -224,11 +247,10 @@ int main()
 	_JUNK_BLOCK(jmp_label21)
 }
 
-void retarded_big_coder_moments() {
-	yeet = 10;
-		yah = 20;
-		yeah_motherfucking_yeet = yeet + yah;
-
+void junk() {
+	jc1 = 10;
+	jc2 = 20;
+	jc123 = jc1 + jc2;
+	holy_thousand = jc123 * 5;
 }
-
 
