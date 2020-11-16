@@ -22,9 +22,6 @@ int z;
 int _x;
 int _y;
 int _z;
-int jc1;
-int jc2;
-int jc123;
 // _________________________READ_________________________
 /*
 Injector is made by the creator of randoinjector, then fixed by martinjanas to fix with trustlaunch, then I added some misc stuff here.
@@ -185,6 +182,14 @@ int main()
 	{
 		dll_name += ".dll";
 	}
+	else
+	{
+		system("cls");
+		SetConsoleTextAttribute(h, FOREGROUND_RED | FOREGROUND_INTENSITY);
+		cout << "ERROR: .dll not found" << endl;
+		Sleep(1500);
+		return 0;
+	}
 	// Generate Random Numbers
 	system("cls");
 	cout << "Generating Random Numbers.." << endl;
@@ -249,10 +254,12 @@ int main()
 	_JUNK_BLOCK(jmp_label21)
 }
 
-void junk() {
-	jc1 = 10;
-	jc2 = 20;
-	jc123 = jc1 + jc2;
-	holy_thousand = jc123 * 5;
-}
+
+// ================================= P A S T E _ Y O U R _ J U N K _ C O D E _ H E R E  =================================
+
+
+
+
+//============================================== J U N K _ C O D E _ E N D  ============================================
+
 
