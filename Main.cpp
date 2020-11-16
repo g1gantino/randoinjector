@@ -211,6 +211,9 @@ int main()
 	Sleep(420);
 	cout << "Done...";
 	LPCSTR DLL_NAME = dll_name.c_str();
+	Sleep(100);
+	SetConsoleTextAttribute(h, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+	cout << "Injection successful. << endl;
 	Sleep(1000);
 	// Sleep is unneccesary but good for a less snappy experience
 	// ....................I         N               J        E             C           T ..........................
