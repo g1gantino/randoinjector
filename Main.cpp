@@ -7,8 +7,9 @@
 #include <cstdlib>
 #include <ctime>
 using namespace std;
-HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+
 //could have made a header file, but works. you can make a header file and copy all of theese into it and add using namespace std;  / and then you #include "your_header_name.h" in the main.cpp
+HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 string dll_name;
 string find_dll;
 string title;
