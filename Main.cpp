@@ -42,6 +42,10 @@ Colors:
 #define BACKGROUND_RED       0x0040 // background color contains red.
 #define BACKGROUND_INTENSITY 0x0080 // background color is intensified.
 */
+
+
+
+//READ: CHANGE theese __asm _emit 0x86 \ with a generator. This is what makes the injector ud.
 #define JUNKS \
 __asm _emit 0x86 \
 __asm _emit 0xD2 \
