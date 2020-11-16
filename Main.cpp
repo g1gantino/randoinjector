@@ -7,7 +7,7 @@
 #include <cstdlib>
 #include <ctime>
 using namespace std;
-
+HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 //could have made a header file, but works. you can make a header file and copy all of theese into it and add using namespace std;  / and then you #include "header_name.h" in the main.cpp
 string dll_name;
 string find_dll;
@@ -101,8 +101,6 @@ __asm _emit 0xFB \
 
 
 
-using namespace std;
-
 
 // Don't change this!
 #define _JUNK_BLOCK(s) __asm jmp s JUNKS __asm s:
@@ -168,7 +166,7 @@ int main()
 	//FIXME: dont use system
 	system("@echo off");
 	system("title Future Injector");
-	SetConsoleTextAttribute(h,FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+	SetConsoleTextAttribute(h, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
 	cout << " ______     _                    _____       _           _             " << endl;
 	cout << "|  ____|   | |                  |_   _|     (_)         | |            " << endl;
 	cout << "| |__ _   _| |_ _   _ _ __ ___    | |  _ __  _  ___  ___| |_ ___  _ __ " << endl;
