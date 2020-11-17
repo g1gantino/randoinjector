@@ -197,6 +197,7 @@ int main()
 	cout << "Done...";
 	LPCSTR DLL_NAME = dll_name.c_str();
 	Sleep(100);
+	system("cls");
 	SetConsoleTextAttribute(h, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 	cout << "Injection successful. << endl;
 	Sleep(1000);
