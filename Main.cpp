@@ -23,62 +23,63 @@ int _z;
 Injector is made by the creator of randoinjector, then fixed by martinjanas to fix with trustlaunch, then I added some misc stuff here.
 It is nothing special but it works, is UD and is free.
 Feel free to use it in your videos etc.
-
+*/
 
 
 
 //READ: CHANGE theese __asm _emit 0x86 \ with a generator. This is what makes the injector ud.
 #define JUNKS \
-__asm _emit 0x86 \
-__asm _emit 0xD2 \
-__asm _emit 0x40 \
-__asm _emit 0x34 \
-__asm _emit 0x59 \
-__asm _emit 0x65 \
-__asm _emit 0xA1 \
-__asm _emit 0x3A \
-__asm _emit 0x12 \
-__asm _emit 0xF6 \
-__asm _emit 0x81 \
-__asm _emit 0xC6 \
+__asm _emit 0x3F \
+__asm _emit 0x91 \
+__asm _emit 0x60 \
+__asm _emit 0x25 \
+__asm _emit 0x5D \
+__asm _emit 0x8F \
+__asm _emit 0x90 \
+__asm _emit 0xB8 \
 __asm _emit 0x22 \
-__asm _emit 0x9C \
-__asm _emit 0xC1 \
-__asm _emit 0x8F \
-__asm _emit 0x0E \
-__asm _emit 0x51 \
-__asm _emit 0xA8 \
-__asm _emit 0x30 \
-__asm _emit 0x9D \
-__asm _emit 0x81 \
-__asm _emit 0x80 \
-__asm _emit 0xCA \
-__asm _emit 0xED \
-__asm _emit 0xEE \
-__asm _emit 0x2A \
-__asm _emit 0x8F \
-__asm _emit 0x3E \
-__asm _emit 0x4F \
-__asm _emit 0x86 \
-__asm _emit 0xF7 \
-__asm _emit 0x35 \
-__asm _emit 0xDC \
-__asm _emit 0xBC \
-__asm _emit 0xDE \
+__asm _emit 0xA7 \
+__asm _emit 0x05 \
+__asm _emit 0x40 \
+__asm _emit 0x63 \
 __asm _emit 0xAA \
-__asm _emit 0xE3 \
-__asm _emit 0x46 \
-__asm _emit 0x24 \
-__asm _emit 0x9B \
-__asm _emit 0x26 \
-__asm _emit 0xD3 \
-__asm _emit 0x3C \
+__asm _emit 0xC3 \
+__asm _emit 0x96 \
+__asm _emit 0x4D \
+__asm _emit 0x7C \
+__asm _emit 0xFE \
+__asm _emit 0xC8 \
+__asm _emit 0x1D \
+__asm _emit 0x35 \
+__asm _emit 0x2E \
+__asm _emit 0x08 \
 __asm _emit 0x67 \
-__asm _emit 0x7B \
-__asm _emit 0x56 \
+__asm _emit 0x41 \
+__asm _emit 0x02 \
+__asm _emit 0xFD \
+__asm _emit 0x23 \
+__asm _emit 0x50 \
+__asm _emit 0x8A \
+__asm _emit 0x51 \
+__asm _emit 0x6A \
+__asm _emit 0x66 \
+__asm _emit 0xEB \
+__asm _emit 0x22 \
 __asm _emit 0x7E \
-__asm _emit 0x94 \
-__asm _emit 0xFB \
+__asm _emit 0x8C \
+__asm _emit 0xA0 \
+__asm _emit 0xC2 \
+__asm _emit 0xF0 \
+__asm _emit 0x2D \
+__asm _emit 0x83 \
+__asm _emit 0xB6 \
+__asm _emit 0xC8 \
+__asm _emit 0xFA \
+__asm _emit 0x78 \
+__asm _emit 0xCA \
+__asm _emit 0xF0 \
+__asm _emit 0xD6 \
+
 
 
 
@@ -167,14 +168,6 @@ int main()
 	{
 		dll_name += ".dll";
 	}
-	else
-	{
-		system("cls");
-		SetConsoleTextAttribute(h, FOREGROUND_RED | FOREGROUND_INTENSITY);
-		cout << "ERROR: .dll not found" << endl;
-		Sleep(1500);
-		return 0;
-	}
 	// Generate Random Numbers
 	system("cls");
 	cout << "Generating Random Numbers.." << endl;
@@ -199,7 +192,7 @@ int main()
 	Sleep(100);
 	system("cls");
 	SetConsoleTextAttribute(h, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
-	cout << "Injection successful. << endl;
+	cout << "Injection successful" << endl;
 	Sleep(1000);
 	// Sleep is unneccesary but good for a less snappy experience
 	// ....................I         N               J        E             C           T ..........................
@@ -250,5 +243,3 @@ int main()
 
 
 //============================================== J U N K _ C O D E _ E N D  ============================================
-
-
