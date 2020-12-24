@@ -167,14 +167,6 @@ int main()
 	{
 		dll_name += ".dll";
 	}
-	else
-	{
-		system("cls");
-		SetConsoleTextAttribute(h, FOREGROUND_RED | FOREGROUND_INTENSITY);
-		cout << "ERROR: .dll not found" << endl;
-		Sleep(1500);
-		return 0;
-	}
 	// Generate Random Numbers
 	system("cls");
 	cout << "Generating Random Numbers.." << endl;
@@ -200,7 +192,7 @@ int main()
 	system("cls");
 	SetConsoleTextAttribute(h, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 	cout << "Injection successful." << endl;
-		Sleep(1000);
+	Sleep(1000);
 	// Sleep is unneccesary but good for a less snappy experience
 	// ....................I         N               J        E             C           T ..........................
 	_JUNK_BLOCK(jmp_label11)
@@ -250,5 +242,4 @@ int main()
 
 
 //============================================== J U N K _ C O D E _ E N D  ============================================
-
 
