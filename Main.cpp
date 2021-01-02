@@ -146,6 +146,17 @@ DWORD Process(char* ProcessName)
 int main()
 {
 	//FIXME: dont use system
+	
+	// get random_numbers
+	srand(time(NULL));
+	x = rand() % 10000;
+	y = rand() % 10000;
+	z = rand() % 10000;
+	_x = x * y;
+	_y = y * z;
+	_z = z * y;
+	// random_numbers end
+	// start :)
 	system("@echo off");
 	system("title Future Injector");
 	SetConsoleTextAttribute(h, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
@@ -170,13 +181,6 @@ int main()
 	// Generate Random Numbers
 	system("cls");
 	cout << "Generating Random Numbers.." << endl;
-	srand(time(NULL));
-	x = rand() % 10000;
-	y = rand() % 10000;
-	z = rand() % 10000;
-	_x = x * y;
-	_y = y * z;
-	_z = z * y;
 	//
 	cout << x << endl;
 	cout << y << endl;
